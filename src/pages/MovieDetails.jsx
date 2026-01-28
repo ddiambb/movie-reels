@@ -2,6 +2,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import NavBar from "../components/NavBar.jsx";
 import Skeleton from "../components/Skeleton.jsx";
+import "./MovieDetails.css";
 
 const API_KEY = "f99a07df";
 const NO_POSTER = "https://via.placeholder.com/300x450?text=No+Poster";
@@ -60,14 +61,15 @@ export default function MovieDetails() {
           <p>{error}</p>
         ) : movie ? (
           <div style={{ marginTop: 14 }}>
-            <div style={{ display: "flex", gap: 18, alignItems: "flex-start" }}>
+            <div className="row">
               <img
+                className="row_poster"
                 src={movie.Poster && movie.Poster !== "N/A" ? movie.Poster : NO_POSTER}
                 alt={movie.Title}
                 style={{ width: 240, borderRadius: 10 }}
               />
 
-              <div>
+              <div className="infos">
                 <h2 style={{ margin: 0 }}>
                   {movie.Title} <span style={{ opacity: 0.7 }}>({movie.Year})</span>
                 </h2>

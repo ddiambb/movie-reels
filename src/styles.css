@@ -308,6 +308,12 @@ body {
   }
 }
 
+@media (max-width: 475px) {
+  .imageGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
 .nav {
   padding: 8px 14px;
 }
